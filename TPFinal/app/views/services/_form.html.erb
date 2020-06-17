@@ -1,0 +1,64 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+
+  <%= form_with(model: service, local: true) do |form| %>
+
+    <div class="error">
+      <% if service.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(service.errors.count, "error") %> prohibited this service from being saved:</h2>
+
+          <ul>
+            <% service.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+
+    <br>
+    <br>
+
+
+    <div class="field">
+      <div class = "advise">Note: Services last 5 days including the day when started</div>
+      <br>
+      <%= form.label :Starting_date %> <br>
+      <%= form.date_select :from %>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="field">
+      <%= form.label :car_id %> <br>
+      <%= form.collection_select(:car_id, @cars, :id, :patent) %>
+    </div>
+
+    <br>
+
+
+    <div class="field">
+      <div class = "advise">Note: Every car has an integrated kilometer counter which is restarted after service. This field refers to kilometers in the moment of the service. If you are scheduling a service in the future, set this value to 0</div>
+      <br>
+      <%= form.number_field :kilometers, placeholder: "Kilometer counter"  %>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="field">
+      <%= form.text_area :description, :cols => 130, :rows => 10, placeholder: "Description" %>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+  <% end %>
+

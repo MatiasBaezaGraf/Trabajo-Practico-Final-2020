@@ -1,0 +1,510 @@
+ body {
+  background-color:#000000;
+}
+
+h1{
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+
+}
+
+.navbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background-color: #424242;
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.navbut{
+ 	text-align: left;
+	color: white;
+}
+
+.secondary-btns{
+	background-color: #949494;
+	text-decoration: none;
+	color: white;
+	padding: 10px 24px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.secondary-btns:hover {
+  background-color: white; /* Green */
+  color: #949494;
+}
+
+.question-text{
+	font-size: 13px;
+	text-decoration: none;
+}
+
+.question{
+	font-size: 13px;
+	text-decoration: none;
+}
+
+.question:hover {
+	color: white;
+	transition-duration: 0.4s;
+}
+
+.ses{
+	background-color: #949494;
+	text-decoration: none;
+	color: white;
+	padding: 10px 24px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.showcase{
+	background-color: gray;
+	border-radius: 2px;
+	margin: auto;
+    width: 95%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.index{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	width: 100%;
+	border-collapse: collapse;
+	padding-left: 20px;
+	background-color: #474747;
+	color: #bfbfbf;
+}
+
+.index th{
+	background-color: #230096;
+	border:none;
+	text-align: left;
+	padding-left: 20px;
+	color: white; 
+}
+
+.index td{
+	border:none;
+}
+
+.index tr:nth-child(even) {background-color: #545454;}
+
+.index-aligned{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	width: 100%;
+	border-collapse: collapse;
+	padding-left: 20px;
+	background-color: #474747;
+	color: #bfbfbf;
+	table-layout: fixed;
+}
+
+.index-aligned th{
+	background-color: #00628f;
+	border:none;
+	text-align: left;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: white; 
+}
+
+.index-aligned td{
+	border:none;
+}
+
+.index-aligned tr:nth-child(even) {background-color: #545454;}
+
+.index-aligned-color{
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+	width: 100%;
+	border-collapse: collapse;
+	padding-left: 20px;
+	background-color: #474747;
+	color: #bfbfbf;
+	table-layout: fixed;
+}
+
+.index-aligned-color th{
+	background-color: #330038;
+	border:none;
+	text-align: left;
+	padding-left: 20px;
+	color: white; 
+}
+
+.index-aligned-color td{
+	border:none;
+}
+
+.index-aligned-color tr:nth-child(even) {background-color: #545454;}
+
+.show-but{
+	background-color: #290066;
+	text-decoration: none;
+	color: white;
+	padding: 5px 5px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+.show-but:hover {
+  background-color: white;
+  color: #290066;
+}
+
+.edit-but{
+	background-color: #00528c;
+	text-decoration: none;
+	color: white;
+	padding: 5px 5px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+.edit-but:hover {
+  background-color: white;
+  color: #00528c;
+}
+
+.destroy-but{
+	background-color: #a80000;
+	text-decoration: none;
+	color: white;
+	padding: 5px 5px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+.destroy-but:hover {
+  background-color: white;
+  color: #a80000;
+}
+
+.history-but{
+	background-color: #177300;
+	text-decoration: none;
+	color: white;
+	padding: 5px 5px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+.history-but:hover {
+  background-color: white;
+  color: #177300;
+}
+
+.new-but{
+	background-color: black;
+	text-decoration: none;
+	color: white;
+	padding: 5px 5px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+.new-but:hover {
+  background-color: white;
+  color: black;
+}
+
+.navigation-but{
+	background-color: #e3e3e3;
+	text-decoration: none;
+	color: black;
+	padding: 5px 5px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+.navigation-but:hover {
+  background-color: #470000;
+  color: white;
+}
+
+.search{
+	padding: 30px;
+	text-align: left;
+	background-color: #bdbdbd;
+}
+
+.search select{
+  	border-radius: 1px;
+  	border: none;
+  	background-color: #ebebeb;
+  	font-size: 20px;
+  	padding: 10px;
+  	font-family: 'Montserrat', sans-serif;
+}
+
+.conf{
+	background-color: blue;
+}
+
+.fuel_id {
+	background-color: blue;
+	color: white; /*hide original SELECT element: */
+	font-family: 'Montserrat', sans-serif;
+}
+
+.center{
+	margin-right: auto;
+	margin-left: auto;
+	border-bottom: 2px;
+	border-collapse: collapse;
+	text-align: left;
+}
+
+.center th, td{
+	border: 2px solid #ddd;
+	padding: 17px;
+  	width: 70%;
+}
+
+.center tr:nth-child(even) {background-color: #a6a6a6;}
+
+.showcase-show{
+	background-color: gray;
+	border-radius: 2px;
+	margin: auto;
+    width: 60%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+
+.login{
+	background-color: gray;
+	border-radius: 2px;
+	margin: auto;
+    width: 30%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+}
+
+.field input {
+	width: 70%;
+  	border-radius: 1px;
+  	border: none;
+  	background-color: #c2c2c2;
+  	font-size: 17px;
+  	padding: 10px;
+}
+
+.field input::placeholder{
+	color: #303030;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.field select {
+	width: 70%;
+  	border-radius: 1px;
+  	border: none;
+  	background-color: #c3c3c3;
+  	font-size: 20px;
+  	padding: 10px;
+  	font-family: 'Montserrat', sans-serif;
+}
+
+.field textarea{
+	width: 70%;
+  	border-radius: 1px;
+  	border: none;
+  	background-color: #c2c2c2;
+  	font-size: 17px;
+  	padding: 10px;
+  	font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.actions input {
+	width: 70%;
+    border: none;
+  	border-radius: 1px;
+  	margin-bottom: 10px;
+  	font-family: 'Montserrat', sans-serif;
+  	font-size: 20px;
+  	text-transform: uppercase;
+  	transition-duration: 0.4s;
+
+}
+
+.actions input:hover {
+	background-color: black; /* Green */
+  	color: white;
+}
+
+
+.titles{
+	font-size: 40px;
+	color: white;
+}
+
+.up{
+	background-color: darkgray;
+}
+
+.back-but{
+	background-color: #4f4f4f;
+	text-decoration: none;
+	color: white;
+	padding: 5px 5px;
+	border-radius: 2px;
+	transition-duration: 0.4s;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.back{
+	text-align: left;
+	margin-left: 30px;
+}
+
+.back-but:hover {
+  background-color: white; /* Green */
+  color: black;
+}
+
+.error{
+	background-color: darkred;
+	color: lightgray;
+}
+
+.error-explanation{
+	color: red;
+}
+
+.advise{
+	background-color: black;
+	color: #c4c4c4;
+}
+
+.conf-create{
+	background-color: #005e18;
+	color: white;
+}
+
+.conf-destroy{
+	background-color: #ab9d00
+}
+
+.container{
+	width: 100%;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.container div{
+	width: 47.5%;
+    display: inline-block;
+}
+
+.upname, .uplogout{
+	color:white;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+}
+
+.upname{
+	text-align: left;
+}
+
+.uplogout{
+	text-align: right;	
+}
+
+.logout, .loginb{
+	padding:2px;
+	text-decoration:none;
+	background-color: black;
+	color: white;
+	border-radius: 2px; 
+	border: 2px solid #000000;
+	transition-duration: 0.4s;
+}
+
+.logout:hover{
+	background-color: white;
+	border: 2px solid #e00000;
+	color: #e00000;
+	}
+
+.loginb:hover{
+	background-color: white;
+	border: 2px solid #1d0085;
+	color: #1d0085;
+	}
+
+.new, .old{
+	text-decoration: none;
+	color: white;
+	transition-duration: 0.4s;
+}
+
+.new:hover, .old:hover{
+	color: #009eba;
+}
+
+.navi{
+	width: 100%;
+	text-align: center;
+	background-color: #bababa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */

@@ -1,0 +1,49 @@
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<div class = "showcase">
+
+  <div class = "back">
+    <%= link_to '◄BACK', root_path, class: "back-but"%>
+    <%= link_to 'SERVICES', services_path, class: "navigation-but" if can? :index, Reservation%>
+    <%= link_to 'RESERVATIONS', reservations_path, class: "navigation-but" if can? :index, Reservation%>
+    <%= link_to 'CARS', cars_path, class: "navigation-but" if can? :index, Car%>
+    <%= link_to 'CLASSIFICATIONS', types_path, class: "navigation-but" if can? :index, Type%>
+  </div>
+
+  <div class = "up">
+    <h2 class = "titles">Fuels</h2>
+  </div>
+
+  <div class = "conf-destroy"><p id="notice"><%= notice %></p></div>
+
+  <table class = "index-aligned">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @fuels.each do |fuel| %>
+        <tr>
+          <td><%= fuel.name %></td>
+          <td><%= link_to 'Edit', edit_fuel_path(fuel), class: "edit-but" if can? :edit, Fuel%></td>
+          <td><%= link_to 'Destroy', fuel, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy-but" if can? :destroy, Fuel%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <div class="back">
+    <%= link_to 'New fuel', new_fuel_path, class: "new-but" if can? :create, Fuel %>
+  </div>
+</div>
+
+<br>
+

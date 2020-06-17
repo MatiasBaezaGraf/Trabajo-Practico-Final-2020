@@ -1,0 +1,59 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+
+  <%= form_with(model: reservation, local: true) do |form| %>
+
+  <div class="error">
+    <% if reservation.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(reservation.errors.count, "error") %> prohibited this reservation from being saved:</h2>
+
+        <ul>
+          <% reservation.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <p class = "advise">After the return of a car, there's a two (2) day aconditioning perdiod in which it can't be reserved</p>
+    <%= form.label :from %> <br>
+    <%= form.date_select :from %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= form.label :to %> <br>
+    <%= form.date_select :to %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= form.label :Car %> <br>
+    <%= form.collection_select(:car_id, @cars, :id, :patent) %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <p class = "advise">If you pay with credit you have 20% surcharge</p>
+    <%= form.label :Payment_method %> <br>
+    <%= form.select(:payment, @payment_methods) %>
+  </div>
+
+  <br>
+  <br> 
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

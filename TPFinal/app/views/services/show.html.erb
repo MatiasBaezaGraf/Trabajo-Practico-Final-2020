@@ -1,0 +1,45 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<div class="showcase-show">
+
+  <div class = "conf-create"><p id="notice"><%= notice %></p></div>
+
+  <table class="center">
+    <tr>
+      <th>From:</th>
+      <td><%= @service.from %></td>
+    </tr>
+    <tr>
+      <th>To:</th>
+      <td><%= @service.to %></td>
+    </tr>
+    <tr>
+      <th>Kilometers from last service:</th>
+      <td><%= @service.kilometers %></td>
+    </tr>
+    <tr>
+      <th>Car patent:</th>
+      <td><%= @service.car.patent %></td>
+    </tr>
+    <tr>
+      <th>Car brand:</th>
+      <td><%= @service.car.brand %></td>
+    </tr>
+    <tr>
+      <th>Car model:</th>
+      <td><%= @service.car.model%></td>
+    </tr>
+    <tr>
+      <th>Service description:</th>
+      <td><%= @service.description%></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+
+  <%= link_to '◄BACK', services_path, class: "back-but"%> 
+
+</div>

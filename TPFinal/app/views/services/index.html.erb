@@ -1,0 +1,60 @@
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<div class = "showcase">
+
+  <div class = "back">
+    <%= link_to '◄BACK', root_path, class: "back-but"%>
+    <%= link_to 'CARS', cars_path, class: "navigation-but" if can? :index, Car%>
+    <%= link_to 'RESERVATIONS', reservations_path, class: "navigation-but" if can? :index, Reservation%>
+    <%= link_to 'FUELS', fuels_path, class: "navigation-but" if can? :index, Fuel%>
+    <%= link_to 'CLASSIFICATIONS', types_path, class: "navigation-but" if can? :index, Type%>
+  </div>
+
+  <div class = "up">
+    <h1 class = "titles">Services</h2>
+  </div>
+
+  <div class = "conf-destroy"><p id="notice"><%= notice %></p></div>
+
+  <table class ="index-aligned">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Kilometers from service</th>
+        <th>Car patent</th>
+        <th>Car brand</th>
+        <th>Car model</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @services.each do |service| %>
+        <tr>
+          <td><%= service.from %></td>
+          <td><%= service.to %></td>
+          <td><%= service.kilometers %></td>
+          <td><%= service.car.patent %></td>
+          <td><%= service.car.brand %></td>
+          <td><%= service.car.model %></td>
+          <td><%= link_to 'Show', service, class: "show-but" if can? :show, Service%></td>
+          <td><%= link_to 'Destroy', service, class: "destroy-but", method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, Service%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p class = "advise">Note: Every car has an integrated kilometer counter which is restarted after service. To calculate a car's total kilometers, sum up every "kilometers from service" value for a specified car. Due to the fact that you can create services in the past, referring to which ones haven't been documented in this application, it's taken for granted that the needed data it's known with at least a minimal precision.        </p>
+
+  <br>
+
+  <div class="back">
+    <%= link_to 'New Service', new_service_path, class: "new-but" if can? :create, Service %>
+  </div>
+</div>
+
+<br>

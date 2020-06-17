@@ -1,0 +1,32 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+
+<%= form_with(model: type, local: true) do |form| %>
+
+<div class="error">
+  <% if type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(type.errors.count, "error") %> prohibited this type from being saved:</h2>
+
+      <ul>
+        <% type.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+  <div class="field">
+    <%= form.text_field :name, placeholder: "Name" %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

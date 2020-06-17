@@ -1,0 +1,120 @@
+
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<div class = "showcase">
+
+  <div class = "back">
+    <%= link_to '◄BACK', root_path, class: "back-but"%>
+    <%= link_to 'SERVICES', services_path, class: "navigation-but" if can? :index, Reservation%>
+    <%= link_to 'RESERVATIONS', reservations_path, class: "navigation-but" if can? :index, Reservation%>
+    <%= link_to 'FUELS', fuels_path, class: "navigation-but" if can? :index, Fuel%>
+    <%= link_to 'CLASSIFICATIONS', types_path, class: "navigation-but" if can? :index, Type%>
+
+  </div>
+
+  <div class = "up">
+    <h1 class = "titles">Cars</h2>
+  </div>
+
+  <div class = "conf-destroy"><p id="notice"><%= notice %></p></div>
+
+  <div class = "search">
+
+    <form action="/cars" method="GET">
+
+        <%= @fuel_id %>
+        Fuel type: 
+        <select style = "border-color: white;" name="fuel_id">
+          <option disabled selected value> Select a type </option>    
+          <% Fuel.all.each_with_index do | f, index | %>
+            <option value="<%= f.id %>" <% f.id.to_s == @fuel_id ? "selected" : "" %>> <%= f.name%> </option>
+          <% end -%>
+        </select>
+
+     
+        <%= @type_id %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Classification: 
+        <select name="type_id">  
+          <option disabled selected value> Select a classification </option> 
+          <% Type.all.each_with_index do | t, index | %>
+            <option value="<%= t.id %>" <% t.id.to_s == @type_id ? "selected" : "" %>> <%= t.name%> </option>
+          <% end -%>
+        </select>
+
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input style="color:white; border-radius: 2px; padding: 10px; margin-right: 20px; font-family: 'Montserrat', sans-serif; background-color: black; " type="submit", value="FILTER CARS" />
+
+    </form>
+
+    <br>
+
+    <form action="/cars" method="GET">
+      
+       FROM: <input style="color:#787878; border-radius: 2px; padding: 10px; margin-right: 20px; font-family: 'Montserrat', sans-serif; background-color: #e0e0e0; text-transform: uppercase; " type="date" name="from" placeholder="From" value="<%= @from %>"/>
+
+       TO :<input style="color:#787878; border-radius: 2px; padding: 10px; margin-right: 20px; font-family: 'Montserrat', sans-serif; background-color: #e0e0e0; text-transform: uppercase;" type="date" name="to" placeholder="To" value="<%= @to %>"/>
+
+      <input style="color:white; border-radius: 2px; padding: 10px; margin-right: 20px; font-family: 'Montserrat', sans-serif; background-color: black; " type="submit", value="CHECK AVAILABILITY" />
+
+    </form>
+
+  </div>
+
+  <table class = "index">
+    <thead>
+      <tr>
+        <th>Patent</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Classification</th>
+        <th>Fuel type</th>
+        <th>Price per day</th>
+        <th colspan="5"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cars.each do |car| %>
+        <tr>
+          <td><%= car.patent %></td>
+          <td><%= car.brand %></td>
+          <td><%= car.model %></td>
+          <td><%= car.type.name %></td>
+          <td><%= car.fuel.name %></td>
+          <td><%= car.price_day %></td>
+          <td><%= link_to 'Show', car, class: "show-but" if can? :show, Car %></td>
+          <td><%= link_to 'Edit', edit_car_path(car), class: "edit-but" if can? :edit, Car %></td>
+          <td><%= link_to 'Destroy', car, class: "destroy-but", method: :delete, data: { confirm: 'Are you sure?' }if can? :destroy, Car  %> </td> 
+          <td><%= link_to "S", services_path(:car_id => car.id), class: "history-but" if can? :index, Service  %> 
+          </td>
+          <td><%= link_to "R", reservations_path(:car_id => car.id), class: "history-but" if can? :index, Reservation  %> 
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <p class = "advise">Note 1: When a car is eliminated so are it's Reservations and Services        </p>
+
+  <p class = "advise">Note 2: S an R buttons are for Service and Reservation histories for each car        </p>
+
+  <br>
+
+
+  <div class="back">
+    <%= link_to 'New Car', new_car_path, class: "new-but" if can? :create, Car %>
+  </div>
+
+</div>
+
+ <br>
+
+
+
+
+
+

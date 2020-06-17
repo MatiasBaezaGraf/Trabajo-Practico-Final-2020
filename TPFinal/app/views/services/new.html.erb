@@ -1,0 +1,18 @@
+<div class="showcase">
+
+	<div class="back">
+      <%= link_to '◄BACK', services_path, class: "back-but"%>
+    </div>
+
+	<div class = "up">
+    	<h2 class = "titles">New service</h2>
+  	</div>
+
+	<%= render 'form', service: @service %>
+
+	<div class="back">
+      <%= link_to 'Back', services_path, class: "back-but"%>
+    </div>
+
+	
+</div>

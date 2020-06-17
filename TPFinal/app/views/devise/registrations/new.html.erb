@@ -1,0 +1,94 @@
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class = "login">
+
+  <div class = "up">
+    <h2 class = "titles">Sign up</h2>
+  </div>
+
+  <div class="error"><%= render "devise/shared/error_messages", resource: resource %></div>
+
+  <div class = "question-text">If you already have an account you can 
+    <%= link_to "Login", new_user_session_path, class: "question"%>    
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= f.text_field :first_name, autofocus: true, placeholder: "First name"%>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= f.text_field :last_name, placeholder: "Last name" %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= f.text_field :adress, placeholder: "Address" %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= f.label :card_type %><br />
+    <%= f.select(:card_type, @cards) %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= f.text_field :card_number, placeholder: "Card number" %>
+  </div>
+
+  <br>
+  <br>
+
+
+  <div class="field">
+    <%= f.email_field :email, autocomplete: "email",  placeholder: "E-mail" %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= f.password_field :password, autocomplete: "new-password",  placeholder: "Password (6 characters minimum)" %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",  placeholder: "Confirm password" %>
+  </div>
+
+  <br>
+  <br>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+
+  <br>
+
+  <%= link_to "Back", root_path, class: "back-but" %>
+
+  <br>
+  <br>
+
+</div>
+
+<% end %>
+

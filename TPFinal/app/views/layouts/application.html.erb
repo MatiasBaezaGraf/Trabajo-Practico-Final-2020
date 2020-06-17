@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Final</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <br>
+    <% if current_user %>
+      <div class="container">
+      
+        <div class="upname"><%= current_user.email %></div>
+        <div class="uplogout"><%= link_to "Log out►", destroy_user_session_path, method: :delete, class: "logout" %></div>
+
+      </div>
+   <% else %>
+      <div class="container">
+      
+        <div class="upname"> GUEST </div>
+        <div class="uplogout"><%= link_to "Log in►", new_user_session_path, class: "loginb" %>
+          <%= link_to "Sign up►", new_user_registration_path, class: "loginb" %>
+        </div>
+
+      </div>
+   <% end %>
+
+    <%= render 'layouts/alerts' %>
+    <%= yield %>
+
+    <div class="container">
+        
+        <div class="upname"> By Matias Leandro Baeza Graf | 2020 </div>
+      
+      </div>
+  </body>
+</html>

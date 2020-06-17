@@ -1,0 +1,52 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<div class="showcase-show">
+
+	<div class = "conf-create"><p id="notice"><%= notice %></p></div>
+
+		<table class="center">
+			<tr>
+		      <th>User mail:</th>
+		      <td><%= @reservation.usermail %></td>
+		    </tr>
+		    <tr>
+		      <th>From:</th>
+		      <td><%= @reservation.from %></td>
+		    </tr>
+		    <tr>
+		      <th>To:</th>
+		      <td><%= @reservation.to %></td>
+		    </tr>
+		    <tr>
+		      <th>Car patent:</th>
+		      <td><%= @reservation.car.patent %></td>
+		    </tr>
+		    <tr>
+		      <th>Car brand:</th>
+		      <td><%= @reservation.car.brand %></td>
+		    </tr>
+		    <tr>
+		      <th>Car model:</th>
+		      <td><%= @reservation.car.model %></td>
+		    </tr>
+		    <tr>
+		      <th>Payment method:</th>
+		      <td><%= @reservation.payment %></td>
+		    </tr>
+		    <tr>
+		      <th>Price:</th>
+		      <td><%= @reservation.price %></td>
+		    </tr>
+		</table>
+
+		<br>
+  		<br>
+
+  		<%= link_to '◄BACK', reservations_path, class: "back-but"%> 
+		
+</div>
+
+
+

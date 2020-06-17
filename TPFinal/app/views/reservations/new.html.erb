@@ -1,0 +1,17 @@
+<div class ="showcase">
+
+	<div class="back">
+     	 <%= link_to '◄BACK', reservations_path, class: "back-but"%>
+  	</div>
+
+	<div class = "up">
+	    <h2 class = "titles">New Reservation</h2>
+	</div>
+
+	<%= render 'form', reservation: @reservation %>
+
+	<div class="back">
+      	<%= link_to '◄BACK', reservations_path, class: "back-but"%>
+    </div>
+
+</div>

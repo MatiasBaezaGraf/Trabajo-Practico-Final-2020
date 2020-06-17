@@ -1,0 +1,47 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<div class="showcase-show">
+
+  <div class = "conf-create"><p id="notice"><%= notice %></p></div>
+
+  <table class="center">
+    <tr>
+      <th>Patent:</th>
+      <td><%= @car.patent %></td>
+    </tr>
+    <tr>
+      <th>Brand:</th>
+      <td><%= @car.brand %></td>
+    </tr>
+    <tr>
+      <th>Model:</th>
+      <td><%= @car.model %></td>
+    </tr>
+    <tr>
+      <th>Type:</th>
+      <td><%= @car.type.name %></td>
+    </tr>
+    <tr>
+      <th>Fuel:</th>
+      <td><%= @car.fuel.name %></td>
+    </tr>
+    <tr>
+      <th>Price per day:</th>
+      <td><%= @car.price_day %></td>
+    </tr>
+  </table>
+
+  <br>
+  <br>
+
+  <%= link_to '◄BACK', cars_path, class: "back-but"%>
+
+  <%= link_to 'Edit', edit_car_path(@car), class: "show-but" if can? :edit, Car %> 
+
+</div>
+
+
+ 
+

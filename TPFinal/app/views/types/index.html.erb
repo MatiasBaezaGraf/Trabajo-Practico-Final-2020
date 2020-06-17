@@ -1,0 +1,47 @@
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<div class = "showcase">
+
+  <div class = "back">
+    <%= link_to '◄BACK', root_path, class: "back-but"%>
+    <%= link_to 'SERVICES', services_path, class: "navigation-but" if can? :index, Reservation%>
+    <%= link_to 'RESERVATIONS', reservations_path, class: "navigation-but" if can? :index, Reservation%>
+    <%= link_to 'CARS', cars_path, class: "navigation-but" if can? :index, Car%>
+    <%= link_to 'FUELS', fuels_path, class: "navigation-but" if can? :index, Fuel%>
+  </div>
+
+  <div class = "up">
+    <h2 class = "titles">Car Classifications</h2>
+  </div>
+
+  <div class = "conf-destroy"><p id="notice"><%= notice %></p></div>
+
+  <table class="index-aligned">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @types.each do |type| %>
+        <tr>
+          <td><%= type.name %></td>
+          <td><%= link_to 'Edit', edit_type_path(type), class: "edit-but" if can? :edit, Type %></td>
+          <td><%= link_to 'Destroy', type, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy-but" if can? :destroy, Type %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <div class="back">
+    <%= link_to 'New classification', new_type_path, class: "new-but" if can? :create, Type %>
+  </div>
+</div>
+
+<br>

@@ -1,0 +1,14 @@
+<div class="showcase">
+
+	<div class = "up">
+    	<h2 class = "titles">Editing car</h2>
+  	</div>
+
+	<%= render 'form', car: @car %>
+
+	<div class="back">
+      	<%= link_to 'Back', cars_path, class: "back-but"%>
+      	<%= link_to 'Show', @car, class: "back-but" %>
+    </div>
+
+</div>

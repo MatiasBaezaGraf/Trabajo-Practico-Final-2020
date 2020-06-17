@@ -1,0 +1,48 @@
+<head>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<nav class = "navbar">
+	<div class = "navbut">
+		<%= link_to "CARS", cars_url, class: "navigation-but" if can? :index, Car %>
+		<%= link_to "RESERVATIONS", reservations_url, class: "navigation-but" if can? :index, Reservation %>
+		<%= link_to "SERVICES", services_url, class: "navigation-but" if can? :index, Service %>
+		<%= link_to "CLASSIFICATIONS", types_url, class: "navigation-but" if can? :index, Type %>
+		<%= link_to "FUELS", fuels_url, class: "navigation-but" if can? :index, Fuel %>
+	</div>
+</nav>
+
+<div class="showcase">
+
+	<div class = "up">
+    	<h1 class = "titles">Rent a Car!</h2>
+  	</div>
+
+  	<br>
+
+	<% if current_user %>
+		<div class="navi">
+			<p>▲  You can navigate with the upper buttons  ▲</p>
+			<br>
+			<%= link_to "Log out", destroy_user_session_path, method: :delete, class: "secondary-btns" %>
+			<br>
+			<br>
+		</div>
+			
+	<% else %>
+		<div class="navi">
+			<p> If you are new here, you can start by <%= link_to "Signing up", new_user_registration_path, class: "new" %> </p>
+			<p> If you already have an account you can <%= link_to "Login", new_user_session_path, class: "old" %>
+			<p>If not, you can access as a guest. Navigate with the upper buttons</p>
+		</div>
+	<% end %>
+
+</div>
+
+
+
+
+
+
+
+

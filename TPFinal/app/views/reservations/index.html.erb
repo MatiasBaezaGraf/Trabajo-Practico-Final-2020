@@ -1,0 +1,69 @@
+
+
+
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<div class = "showcase">
+
+  <div class = "back">
+    <%= link_to '◄BACK', root_path, class: "back-but"%>
+    <%= link_to 'CARS', cars_path, class: "navigation-but" if can? :index, Car%>
+    <%= link_to 'SERVICES', services_path, class: "navigation-but" if can? :index, Service%>
+    <%= link_to 'FUELS', fuels_path, class: "navigation-but" if can? :index, Fuel%>
+    <%= link_to 'CLASSIFICATIONS', types_path, class: "navigation-but" if can? :index, Type%>
+  </div>
+
+  <div class = "up">
+    <h1 class = "titles">Reservations</h2>
+  </div>
+
+  <div class = "conf-destroy"><p id="notice"><%= notice %></p></div>
+
+  <div class = "search">
+    <form action="/reservations" method="GET">
+    <input style=" border: none; padding: 10px; font-family: 'Montserrat', sans-serif;", type="text" placeholder="Search by email" name="usermail" value="<%= @usermail %>"/>
+    
+    <input style="color:white; border-radius: 2px; padding: 10px; margin-right: 20px; font-family: 'Montserrat', sans-serif; background-color: black; " type="submit", value="SUBMIT" />
+    </form>
+  </div>
+
+  <table class ="index-aligned-color">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Car patent</th>
+        <th>Price</th>
+        <th>User first name</th>
+        <th>User last name</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @reservations.each do |reservation| %>
+        <tr>
+          <td><%= reservation.from %></td>
+          <td><%= reservation.to %></td>
+          <td><%= reservation.car.patent %></td>
+          <td><%= reservation.price %></td>
+          <td><%= reservation.usernamef %></td>
+          <td><%= reservation.usernamel %></td>
+          <td><%= link_to 'Show', reservation, class: "show-but" if can? :show, Reservation%></td>
+          <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' }, class: "destroy-but" if can? :destroy, Reservation%></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+   <div class="back">
+      <%= link_to 'New Reservation', new_reservation_path, class: "new-but" if can? :create, Reservation %>
+   </div>
+</div>
+
+<br>
+
